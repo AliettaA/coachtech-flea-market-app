@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profile_image')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('address')->nullable();
+            $table->string('building')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,6 +35,12 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                // ロールバック（元に戻す）時のために削除処理も書く
+                $table->dropColumn(['image', 'post_code', 'address', 'building']);
+            }
+        );
     }
 }

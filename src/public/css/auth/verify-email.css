@@ -1,0 +1,37 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.message {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.go-to-verify {
+    margin: 50px auto;
+    align-items: center;
+    background: rgb(210, 207, 207);
+    color: black;
+    border-radius: 5px;
+    border: 1px black solid;
+    margin-bottom: 30px;
+    font-size: 18px;
+    width: 300px;
+    height: 50px;
+}
+
+.resend-button {
+    
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px;
+    color: blue;
+}
