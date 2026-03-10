@@ -1,0 +1,186 @@
+.exhibition-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.exhibition-form__heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.exhibition-form__errors {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.exhibition-form__error-item {
+    color: var(--color-red);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+/* 画像エリア */
+.exhibition-form__image-group {
+    margin-bottom: 30px;
+}
+
+.exhibition-form__image-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.exhibition-form__image-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: none;
+}
+
+.exhibition-form__image-label {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.exhibition-form__image-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--color-red);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.exhibition-form__image-input {
+    display: none;
+}
+
+.exhibition-form__image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: none;
+}
+
+/* セクション */
+.exhibition-form__section {
+    margin-bottom: 30px;
+}
+
+.exhibition-form__section-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* フォームグループ */
+.exhibition-form__group {
+    margin-bottom: 20px;
+}
+
+.exhibition-form__label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.exhibition-form__input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.exhibition-form__select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.exhibition-form__textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 150px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.exhibition-form__error-message {
+    color: var(--color-red);
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+/* カテゴリ */
+.exhibition-form__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.exhibition-form__category-label {
+    cursor: pointer;
+}
+
+.exhibition-form__category-input {
+    display: none;
+}
+
+.exhibition-form__category-btn {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--color-red);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--color-red);
+    cursor: pointer;
+}
+
+.exhibition-form__category-input:checked+.exhibition-form__category-btn {
+    background-color: var(--color-red);
+    color: #fff;
+}
+
+/* 出品ボタン */
+.exhibition-form__btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-red);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.exhibition-form__btn:hover {
+    opacity: 0.8;
+}

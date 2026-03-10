@@ -1,37 +1,66 @@
-.content {
+body {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.main {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: flex-start;
-    margin-top: 40px;
-    padding: 20px;
-}
-
-.message {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 100;
-}
-
-.go-to-verify {
-    margin: 50px auto;
+    justify-content: center;
     align-items: center;
-    background: rgb(210, 207, 207);
-    color: black;
-    border-radius: 5px;
-    border: 1px black solid;
-    margin-bottom: 30px;
-    font-size: 18px;
-    width: 300px;
-    height: 50px;
+    min-height: calc(100vh - 60px);
+    margin-top: -60px;
 }
 
-.resend-button {
-    
-    font-size: 18px;
-    outline: none;
+.verify {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.verify__text {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.verify__btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    background-color: #c6c4c4;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 50px;
+    margin: 50px auto 0;
+    box-sizing: border-box;
+}
+
+.verify__form {
+    margin-top: 50px;
+}
+
+.verify__btn--resend {
+    background-color: #fff;
+    color: var(--color-blue);
     border: none;
-    background: none;
-    border-bottom: 1px;
-    color: blue;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.verify__btn:hover {
+    opacity: 0.8;
+}
+
+.verify__btn--resend:hover {
+    opacity: 0.8;
 }

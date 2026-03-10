@@ -1,0 +1,104 @@
+.profile {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.profile__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.profile__user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile__avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.profile__name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile__edit-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--color-red);
+    border-radius: 4px;
+    color: var(--color-red);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.profile__edit-btn:hover {
+    background-color: var(--color-red);
+    color: #fff;
+}
+
+.profile__tab {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.profile__tab-link {
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+}
+
+.profile__tab-link--active {
+    border-bottom: 3px solid var(--color-red);
+    color: var(--color-red);
+    font-weight: bold;
+    margin-bottom: -2px;
+}
+
+.profile__item-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.profile__item-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.profile__item-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile__item-name {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.profile__item-price {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.profile__empty {
+    font-size: 14px;
+    color: #555;
+}

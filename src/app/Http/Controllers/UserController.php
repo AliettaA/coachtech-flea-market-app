@@ -9,21 +9,21 @@ use App\Http\Requests\ProfileRequest;
 class UserController extends Controller
 {
     // マイページ
-    public function index()
+    public function index(Request $request)
     {
         $user = auth()->user();
         $items = $user->items;
         $purchases = $user->purchases()->with('item')->get();
         $likedItems = $user->likes()->with('item')->get()->pluck('item');
-
-        return view('mypage.index', compact('user', 'items', 'purchases', 'likedItems'));
+        $page = $request->get('page', 'sell');
+        return view('mypage.mypage', compact('user', 'items', 'purchases', 'likedItems', 'page'));
     }
 
     // プロフィール編集フォーム
     public function edit()
     {
         $user = auth()->user();
-        return view('mypage.edit', compact('user'));
+        return view('mypage.profile', compact('user'));
     }
 
     // プロフィール更新

@@ -14,23 +14,37 @@ class ItemController extends Controller
     // 商品一覧
     public function index(Request $request)
     {
+        \Log::info('request', ['search' => $request->search, 'filled' => $request->filled('search')]);
+
         $query = Item::query();
 
         if ($request->filled('search')) {
             $query->where('name', 'like', '%' . $request->search . '%');
         }
 
+        // 自分の出品した商品を除外
+        if (auth()->check()) {
+            $query->where('user_id', '!=', auth()->id());
+        }
+
         $items = $query->get();
 
-        // マイリスト（ログイン時のみ）
         $likedItems = collect();
         if (auth()->check()) {
-            $likedItems = auth()->user()->likes()->with('item')->get()->pluck('item');
+            $likedQuery = auth()->user()->likes()->with('item');
+
+            $likedItems = $likedQuery->get()->pluck('item')->filter();
+
+            if ($request->filled('search')) {
+                $likedItems = Item::whereIn('id', $likedItems->pluck('id'))
+                    ->where('name', 'like', '%' . $request->search . '%')
+                    ->get();
+            }
         }
 
         $tab = $request->get('tab', 'recommend');
 
-        return view('items.index', compact('items', 'likedItems', 'tab'));
+        return view('index', compact('items', 'likedItems', 'tab'));
     }
 
     // 商品詳細
@@ -54,16 +68,18 @@ class ItemController extends Controller
         // 画像保存
         $imagePath = $request->file('image')->store('items', 'public');
 
-        Item::create([
+        $item = Item::create([
             'user_id'      => auth()->id(),
             'name'         => $request->name,
             'description'  => $request->description,
             'price'        => $request->price,
-            'category_id'  => $request->category_id,
             'condition_id' => $request->condition_id,
             'image'        => $imagePath,
             'brand'        => $request->brand,
         ]);
+
+        // カテゴリの紐付け
+        $item->categories()->attach($request->category_id);
 
         return redirect('/')->with('success', '商品を出品しました');
     }

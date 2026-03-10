@@ -1,0 +1,87 @@
+body {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* 共通カラー */
+:root {
+    --color-red: rgb(241, 61, 25);
+    --color-blue: rgb(14, 59, 237);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding-top: 0;
+}
+
+.address-form {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.address-form__heading {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.address-form__group {
+    margin-bottom: 20px;
+}
+
+.address-form__label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.address-form__input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.address-form__error-message {
+    color: var(--color-red);
+    font-size: 14px;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.address-form__btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-red);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.address-form__btn:hover {
+    opacity: 0.8;
+}
+
+.address-form__login-link {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 16px;
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+.address-form__login-link:hover {
+    text-decoration: underline;
+}

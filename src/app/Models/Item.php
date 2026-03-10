@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Item extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'user_id',
         'category_id',
@@ -32,10 +35,10 @@ class Item extends Model
         return $this->belongsTo(User::class);
     }
 
-    // カテゴリ
-    public function category()
+    // カテゴリ（複数選択対応）
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     // 商品の状態
